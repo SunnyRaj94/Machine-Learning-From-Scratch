@@ -1,0 +1,42 @@
+Machine Learning -
+    The basic process of machine learning is to give training data to a learning algorithm. The learning algorithm then generates     a new set of rules, based on inferences from the data. This is in essence generating a new algorithm, formally referred to as     the machine learning model.
+    
+Common terms used -
+    Labelled data:   It consists of a set of data, an example would include all the labelled cats or dogs images in a folder,                          all the prices of the house based on size etc.
+    Classification:  Separating into groups having definite values Eg. 0 or 1, cat or dog or orange etc.
+    Regression:      Estimating the most probable values or relationship among variables. Eg. estimation of the price of the house                      based on size.
+    Association:     Discovering interesting relations between variables in large databases where the connection found is crucial.
+
+Types Of Machine Learning -
+    Supervised Learning:       The outcome or output for the given input is known before itself.
+    Unsupervised Learning:     The outcome or output for the given inputs is unknown.
+    Semi-supervised Learning:  It is in-between that of Supervised and Unsupervised Learning.
+    Reinforced Learning:       The machine is exposed to an environment where it gets trained by trial and error method.
+    
+Classify the problems as supervised, unsupervised, reinforcement or semi supervised ------->>
+>>>Spam filtering: Is an email spam or not
+    Ans -Supervised learning
+
+>>>Given a list of customers and information about them, discover groups of similar users. This knowledge can then be used for      targeted marketing
+   Ans - Unsupervised Learning
+
+>>>Robotics: A robot is in a maze, and it needs to find a way out.
+   Ans - Reinforced learning
+
+>>>Training an AI for a complex game such as Civilization or Dota.
+   Ans - Reinforced Learning
+
+>>>Anomaly detection: Given measurements from sensors in a manufacturing facility, identify anomalies, i.e. that something is      wrong.
+   Ans -UnSupervised Learning
+
+>>>Discover patterns in data such as whenever it rains, people tend to stay indoors. When it is hot, people buy more ice-cream.
+   Ans - UnSupervised Learning
+
+>>>Given information about a house, predict its price.
+   Ans - Supervised learning
+
+>>>Netflix: Given a user and a movie, predict the rating the user is going to give to the movie
+   Ans  - Supervised learning
+
+>>>Given an image, output which objects are present in the image
+   Ans - Supervised learning
