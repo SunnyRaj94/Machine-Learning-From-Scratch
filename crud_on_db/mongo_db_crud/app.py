@@ -70,7 +70,6 @@ def delete_collection_item():
 def update_collection_item():
     #taking json request
     updation_data = request.json
-    print("hiiiiii",updation_data)
     #inserting json request into database
     my_col.update_one(updation_data[0],updation_data[1])
     #fetching data after created entry and returning updated collection
