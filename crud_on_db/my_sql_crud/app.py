@@ -93,34 +93,115 @@ def delete_book():
     return get_bookstore_table()
 
 
-
-# method sends a post type of request ,
+#method sends a post type of request ,
 # executes the updation query and returns the whole table with updated values
-@app.route('/update', methods=['POST'])
-def update_book():
+@app.route('/update_name', methods=['POST'])
+def update_book_name():
     # initializing database cursor
     curs = db.cursor()
     # fetching the data we have to update from request body
     update_data = list(request.json)
     try:
         #updating the name value
-        name_query="UPDATE bookstore SET book_name = `{}' WHERE s_no = {};".format(update_data[1],update_data[0])
-        #updating the author column value
-        author_query ="UPDATE bookstore SET book_name = `{}' WHERE s_no = {};".format(update_data[2],update_data[0])
-        #updating the gener column value
-        gener_query="UPDATE bookstore SET book_name = `{}' WHERE s_no = {};".format(update_data[3],update_data[0])
-        #updating the publication date column value
-        pub_query="UPDATE bookstore SET book_name = `{}' WHERE s_no = {};".format(update_data[4],update_data[0])
-        #updating the price column value
-        price_query="UPDATE bookstore SET book_name = `{}' WHERE s_no = {};".format(update_data[5],update_data[0])
+        name_query="UPDATE bookstore SET book_name = {} WHERE book_name = {};".format(update_data[1],update_data[0])
         # giving query to cursor to execute
         curs.execute(name_query)
         # giving query to cursor to execute
+        curs.execute("select * from bookstore")
+        # obtaining result after executing query
+        myresult = curs.fetchall()
+        # converting the result into json
+        return jsonify(myresult)
+    except:
+        print("Error: unable to fetch items")
+    return get_bookstore_table()
+
+
+
+#method sends a post type of request ,
+# executes the updation query and returns the whole table with updated values
+@app.route('/update_author', methods=['POST'])
+def update_book_author():
+    # initializing database cursor
+    curs = db.cursor()
+    # fetching the data we have to update from request body
+    update_data = list(request.json)
+    try:
+        #updating the author column value
+        author_query ="UPDATE bookstore SET author = {} WHERE author = {};".format(update_data[1],update_data[0])
+        # giving query to cursor to execute
         curs.execute(author_query)
         # giving query to cursor to execute
-        curs.execute(gener_query)
+        curs.execute("select * from bookstore")
+        # obtaining result after executing query
+        myresult = curs.fetchall()
+        # converting the result into json
+        return jsonify(myresult)
+    except:
+        print("Error: unable to fetch items")
+    return get_bookstore_table()
+
+
+#method sends a post type of request ,
+# executes the updation query and returns the whole table with updated values
+@app.route('/update_gener', methods=['POST'])
+def update_book_gener():
+    # initializing database cursor
+    curs = db.cursor()
+    # fetching the data we have to update from request body
+    update_data = list(request.json)
+    try:
+        #updating the author column value
+        author_query ="UPDATE bookstore SET gener = {} WHERE gener = {};".format(update_data[1],update_data[0])
+        # giving query to cursor to execute
+        curs.execute(author_query)
+        # giving query to cursor to execute
+        curs.execute("select * from bookstore")
+        # obtaining result after executing query
+        myresult = curs.fetchall()
+        # converting the result into json
+        return jsonify(myresult)
+    except:
+        print("Error: unable to fetch items")
+    return get_bookstore_table()
+
+
+
+#method sends a post type of request ,
+# executes the updation query and returns the whole table with updated values
+@app.route('/update_pub', methods=['POST'])
+def update_book_pub_year():
+    # initializing database cursor
+    curs = db.cursor()
+    # fetching the data we have to update from request body
+    update_data = list(request.json)
+    try:
+        #updating the author column value
+        pub_query ="UPDATE bookstore SET pub_year = {} WHERE pub_year = {};".format(update_data[1],update_data[0])
         # giving query to cursor to execute
         curs.execute(pub_query)
+        # giving query to cursor to execute
+        curs.execute("select * from bookstore")
+        # obtaining result after executing query
+        myresult = curs.fetchall()
+        # converting the result into json
+        return jsonify(myresult)
+    except:
+        print("Error: unable to fetch items")
+    return get_bookstore_table()
+
+
+#method sends a post type of request ,
+# executes the updation query and returns the whole table with updated values
+@app.route('/update_price', methods=['POST'])
+def update_book_price():
+    # initializing database cursor
+    curs = db.cursor()
+    # fetching the data we have to update from request body
+    update_data = list(request.json)
+    try:
+        #updating the author column value
+        price_query ="UPDATE bookstore SET price = {} WHERE price = {};".format(update_data[1],update_data[0])
         # giving query to cursor to execute
         curs.execute(price_query)
         # giving query to cursor to execute
@@ -132,7 +213,6 @@ def update_book():
     except:
         print("Error: unable to fetch items")
     return get_bookstore_table()
-
 
 #base url directed towards getting whole table
 @app.route('/')
